@@ -4,16 +4,24 @@
 	<meta charset="UTF-8">
 	<title>Kamień, papier, nożyce</title>
 	<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 </head>
 <body>
 	<div class="container">
-		<div id="buttons">
-			<button id="button-rock">Kamień</button>
-			<button id="button-paper">Papier</button>
-			<button id="button-scissors">Nożyce</button>
-		</div>
-		<div id="messages"></div>
-		<div id="results"></div>
+		<div class="wrapper">
+            <div class="title">
+                <p>Let's play zero and cross game.</p>
+            </div>
+            <div id="buttons">
+                <button id="button-rock" class="btn"><a href="#"><i class="fas fa-hand-rock" ></i>Kamień</a></button>
+                <button id="button-paper" class="btn"><a href="#"><i class="fas fa-hand-paper"></i>Papier</a></button>
+                <button id="button-scissors" class="btn"><a href="#"><i class="fas fa-hand-scissors"></i>Nożyce</a></button>
+            </div>
+            <div class="answer">
+                <div id="messages"></div>
+                <div id="results"></div>
+            </div>
+        </div>
 	</div>
 	<script src="js/functions.js"></script>
 	<script src="js/script.js"></script>

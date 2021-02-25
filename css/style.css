@@ -1,0 +1,76 @@
+body {
+  background-color: darkslategray;
+}
+
+.container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  box-sizing: border-box;
+  color: darkgoldenrod;
+  margin: auto;
+}
+
+.container .wrapper {
+  width: 500px;
+  height: 250px;
+  border: solid 1px;
+  margin: 5px 10px;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+}
+
+.container .wrapper p {
+  font-size: 30px;
+  color: crimson;
+  text-align: center;
+}
+
+.container .wrapper #buttons {
+  -ms-flex: 100%;
+      flex: 100%;
+  -ms-flex-pack: center;
+      justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+
+.container .wrapper .answer {
+  margin: 5px 10px;
+  -ms-flex: 100%;
+      flex: 100%;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+  color: crimson;
+}
+
+.container .wrapper button {
+  background-color: darkslategray;
+  border: none;
+  font-size: 50px;
+  padding: 5px 15px;
+  -ms-flex: 1;
+      flex: 1;
+}
+
+.container .wrapper a {
+  text-decoration: none;
+  font-size: 0px;
+  border: none;
+}
+
+.container .wrapper a i {
+  font-size: 30px;
+  color: white;
+  margin: 10px;
+}
+
+.container .wrapper a i:hover {
+  color: crimson;
+}
+/*# sourceMappingURL=style.css.map */
