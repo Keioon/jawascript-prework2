@@ -1,35 +1,31 @@
-var computerMove, playerMove, playerInput, randomNumber, buttonScissors, buttonPaper, buttonRock, conuterLose, counterWins, counterDraw;
+let counterLose = 0, counterWins = 0, counterDraw = 0;
 
-buttonRock=document.getElementById('button-rock');
-buttonPaper=document.getElementById('button-paper');
-buttonScissors=document.getElementById('button-scissors');
+const buttonRock = document.getElementById('button-rock');
+const buttonPaper = document.getElementById('button-paper');
+const buttonScissors = document.getElementById('button-scissors');
 
-conuterLose=0;
-counterWins=0;
-counterDraw=0;
-
-function buttonClicked(argButtonName){
+function buttonClicked(argButtonName) {
     clearMessages();
     console.log(argButtonName + ' został kliknięty');
 
-    playerMove=argButtonName;
+    let playerMove = argButtonName;
 
-    randomNumber = Math.floor(Math.random() * 3 + 1);
+    let randomNumber = Math.floor(Math.random() * 3 + 1);
     console.log('wylosowana liczba to: ' + randomNumber);
 
-    computerMove=getMoveName(randomNumber);
+    let computerMove = getMoveName(randomNumber);
     console.log('ruch komputera to: ' + computerMove);
 
     displayResult(playerMove, computerMove);
 }
 
-function getMoveName(argMoveId){
+function getMoveName(argMoveId) {
     console.log('wywołano funkcję getMoveName z argumentem: ' + argMoveId);
     if(argMoveId == 1){
         return 'kamień';
-    } else if(argMoveId==2){
+    } else if(argMoveId == 2) {
         return 'papier';
-    } else if(argMoveId==3){
+    } else if(argMoveId == 3) {
         return 'nożyce';
     }else {
         printMessage('Nie znam ruchu o id ' + argMoveId + '. Zakładam, że chodziło o "kamień".');
@@ -37,35 +33,35 @@ function getMoveName(argMoveId){
     }
 } 
 
-function displayResult(argPlayerMove, argComputerMove){
+function displayResult(argPlayerMove, argComputerMove) {
     console.log('wywołano funkcję displayResults z argumentami: ' + argPlayerMove + ', ' + argComputerMove);
-    if(argPlayerMove == 'papier' && argComputerMove == 'kamień'){
-        printMessage('Wygrywasz!');
+    if(argPlayerMove == 'papier' && argComputerMove == 'kamień') {
+        printMessage('You win!');
         counterWins++;
-    } else if(argPlayerMove == 'kamień' && argComputerMove == 'nożyce'){
-        printMessage('Wygrywasz!');
+    } else if(argPlayerMove == 'kamień' && argComputerMove == 'nożyce') {
+        printMessage('You win!');
         counterWins++;
-    } else if(argPlayerMove == 'nożyce' && argComputerMove == 'papier'){
-        printMessage('Wygrywasz!');
+    } else if(argPlayerMove == 'nożyce' && argComputerMove == 'papier') {
+        printMessage('You win!');
         counterWins++;
-    } else if(argPlayerMove==argComputerMove){
-        printMessage('Remis!');
+    } else if(argPlayerMove == argComputerMove) {
+        printMessage('Its draw!');
         counterDraw++;
     } else {
-        printMessage('Przegrywasz :(');
-        conuterLose++;
+        printMessage('You lose :(');
+        counterLose++;
     }
   
-    printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
-    printResult('Ilość wygranych to: '+counterWins+'. Ilość przegranych to: '+conuterLose+'. Ilośc remisów to: '+counterDraw+'.')
+    printMessage('I played ' + argComputerMove + ', and You played ' + argPlayerMove);
+    printResult('The amount of winnings is: ' + counterWins + '. The number of losers is: ' + counterLose + '. The number of draws is: ' + counterDraw + '.')
 }
 
-buttonRock.addEventListener('click', function(){ 
+buttonRock.addEventListener('click', function() { 
     buttonClicked('kamień'); 
 });
-buttonPaper.addEventListener('click', function(){ 
+buttonPaper.addEventListener('click', function() { 
     buttonClicked('papier'); 
 });
-buttonScissors.addEventListener('click', function(){ 
+buttonScissors.addEventListener('click', function() { 
     buttonClicked('nożyce'); 
 });
