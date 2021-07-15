@@ -1,1 +1,1 @@
-Simple, rock, and scissor game
+Simple rock, paper, scissor game
